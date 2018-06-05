@@ -268,13 +268,13 @@ class NginxFull < Formula
     cc_opt += " -I#{Formula["llvm"].opt_include}"
     ld_opt += " -L#{Formula["llvm"].opt_lib} -Wl,-rpath,#{Formula["llvm"].opt_lib}"
 
-    ENV["CC"]          = "#{Formula["gcc"].bin}/gcc-7"
-    ENV["OBJC"]        = "#{Formula["gcc"].bin}/gcc-7"
-    ENV["HOMEBREW_CC"] = "#{Formula["gcc"].bin}/gcc-7"
+    ENV["CC"]          = "#{Formula["gcc"].bin}/gcc-8"
+    ENV["OBJC"]        = "#{Formula["gcc"].bin}/gcc-8"
+    ENV["HOMEBREW_CC"] = "#{Formula["gcc"].bin}/gcc-8"
 
-    ENV["CXX"]          = "#{Formula["gcc"].bin}/g++-7"
-    ENV["OBJCXX"]       = "#{Formula["gcc"].bin}/g++-7"
-    ENV["HOMEBREW_CXX"] = "#{Formula["gcc"].bin}/g++-7"
+    ENV["CXX"]          = "#{Formula["gcc"].bin}/g++-8"
+    ENV["OBJCXX"]       = "#{Formula["gcc"].bin}/g++-8"
+    ENV["HOMEBREW_CXX"] = "#{Formula["gcc"].bin}/g++-8"
 
     args = %W[
       --prefix=#{prefix}
@@ -283,7 +283,7 @@ class NginxFull < Formula
       --with-compat
       --with-threads
       --sbin-path=#{bin}/nginx
-      --with-cc=#{Formula["gcc"].bin}/gcc-7
+      --with-cc=#{Formula["gcc"].bin}/gcc-8
       --with-cc-opt=#{cc_opt}
       --with-ld-opt=#{ld_opt}
       --conf-path=#{etc}/nginx/nginx.conf
